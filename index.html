@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PaymentRequest Card</title>
+</head>
+
+<body>
+<div id="contents">
+    <h1>PaymentRequest Card</h1>
+    <p>Price: USD <strong>$35.00</strong></p>
+    <p><button id="buyButton">Buy</button></p>
+</div>
+<div>
+    <pre id="result"/>
+</div>
+<div>
+    <div id="status"></div>
+    <pre id="log"/>
+</div>
+<script>
+        var Demo = {
+           log : function() {
+             var line = Array.prototype.slice.call(arguments).map(function(argument) {
+               return typeof argument === 'string' ? argument : JSON.stringify(argument);
+             }).join(' ');
+
+             document.querySelector('#log').textContent += line + '\n';
+           },
+
+           clearLog: function() {
+             document.querySelector('#log').textContent = '';
+           },
+
+           setStatus: function(status) {
+             document.querySelector('#status').textContent = status;
+           },
+
+
+        }
+
+        function initPaymentRequest() {
+          let networks = ['mastercard', 'visa'];
+          let types = ['debit', 'credit', 'prepaid'];
+          let supportedInstruments = [{
+              supportedMethods: ['basic-card'],
+            }];
+
+          let details = {
+            total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+            displayItems: [
+              {
+                label: 'Original donation amount',
+                amount: {currency: 'USD', value: '65.00'},
+              },
+              {
+                label: 'Friends and family discount',
+                amount: {currency: 'USD', value: '-10.00'},
+              },
+            ],
+          };
+
+          return new PaymentRequest(supportedInstruments, details);
+        }
+
+        function onBuyClicked(request) {
+          request.show().then(function(instrumentResponse) {
+            sendPaymentToServer(instrumentResponse);
+          })
+          .catch(function(err) {
+            Demo.setStatus(err);
+          });
+        }
+
+        const payButton = document.getElementById('buyButton');
+        payButton.setAttribute('style', 'display: none;');
+        if (window.PaymentRequest) {
+          let request = initPaymentRequest();
+          payButton.setAttribute('style', 'display: inline;');
+          payButton.addEventListener('click', function() {
+            onBuyClicked(request);
+            request = initPaymentRequest();
+          });
+        } else {
+          Demo.setStatus('This browser does not support web payments');
+        }
+        </script>
+</body>
+</html>
