@@ -64,10 +64,10 @@
         }
 
         function onBuyClicked(request) {
-          Demo.log("PaymentRequest.show()")
+          Demo.log("PaymentRequest.show()");
           request.show().then(function(instrumentResponse) {
             if (typeof instrumentResponse.details == "undefined") {
-              Demo.setStatus("instrumentResponse.details not provided")
+              Demo.setStatus("instrumentResponse.details not provided");
             } else {
               if (typeof instrumentResponse.details.cardNumber != "undefined") {
                 Demo.log("Card Number: " ++ instrumentResponse.details.cardNumber);
@@ -81,7 +81,7 @@
             }
 
             instrumentResponse.complete();
-            Demo.setStatus("Payement accepted")
+            Demo.setStatus("Payement accepted");
             
           })
           .catch(function(err) {
