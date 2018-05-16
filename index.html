@@ -64,9 +64,25 @@
         }
 
         function onBuyClicked(request) {
+          Demo.log("PaymentRequest.show()")
           request.show().then(function(instrumentResponse) {
+            if (typeof instrumentResponse.details == "undefined") {
+              Demo.setStatus("instrumentResponse.details not provided")
+            } else {
+              if (typeof instrumentResponse.details.cardNumber != "undefined") {
+                Demo.log("Card Number: " ++ instrumentResponse.details.cardNumber);
+              }
+              if (typeof instrumentResponse.details.cardNumber != "undefined") {
+                Demo.log("Card Number: " ++ instrumentResponse.details.cardHolderName);
+              }
+              if (typeof instrumentResponse.details.cardNumber != "undefined") {
+                Demo.log("Card Number: " ++ instrumentResponse.details.cardSecurityCode);
+              }
+            }
+
             instrumentResponse.complete();
-            //sendPaymentToServer(instrumentResponse);
+            Demo.setStatus("Payement accepted")
+            
           })
           .catch(function(err) {
             Demo.setStatus(err);
