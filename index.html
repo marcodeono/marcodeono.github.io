@@ -65,7 +65,8 @@
 
         function onBuyClicked(request) {
           request.show().then(function(instrumentResponse) {
-            sendPaymentToServer(instrumentResponse);
+            instrumentResponse.complete();
+            //sendPaymentToServer(instrumentResponse);
           })
           .catch(function(err) {
             Demo.setStatus(err);
