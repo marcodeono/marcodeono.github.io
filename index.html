@@ -69,9 +69,12 @@
             if (typeof instrumentResponse.details == "undefined") {
               Demo.setStatus("instrumentResponse.details not provided");
             } else {
-              Demo.log("Card Number: " + instrumentResponse.details.cardNumber);
-              Demo.log("Cardholder Name: " + instrumentResponse.details.cardHolderName);  
-              Demo.log("Card Number: " + instrumentResponse.details.cardSecurityCode);
+              Demo.log("Extracted information from Card");
+              Demo.log("cardNumber: " + instrumentResponse.details.cardNumber);
+              Demo.log("cardholderName: " + instrumentResponse.details.cardholderName);  
+              Demo.log("expiryMonth" + instrumentResponse.details.expiryMonth);
+              Demo.log("expiryYear" + instrumentResponse.details.expiryYear);
+              Demo.log("cardSecurityCode: " + instrumentResponse.details.cardSecurityCode);
             }
 
             instrumentResponse.complete();
