@@ -35,26 +35,26 @@
     <h1>Example of Javascript code to execute a Payment Request</h1>
     <pre class="prettyprint">
 let networks = ['mastercard', 'visa'];
-          let types = ['debit', 'credit', 'prepaid'];
-          let supportedInstruments = [{
-              supportedMethods: ['basic-card'],
-            }];
+let types = ['debit', 'credit', 'prepaid'];
+let supportedInstruments = [{
+    supportedMethods: ['basic-card'],
+}];
 
-          let details = {
-            total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
-            displayItems: [
-              {
-                label: 'Original donation amount',
-                amount: {currency: 'USD', value: '65.00'},
-              },
-              {
-                label: 'Friends and family discount',
-                amount: {currency: 'USD', value: '-10.00'},
-              },
-            ],
-          };
+let details = {
+total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+displayItems: [
+      {
+        label: 'Original donation amount',
+        amount: {currency: 'USD', value: '65.00'},
+      },
+      {
+        label: 'Friends and family discount',
+        amount: {currency: 'USD', value: '-10.00'},
+      },
+    ],
+};
 
-          return new PaymentRequest(supportedInstruments, details);
+return new PaymentRequest(supportedInstruments, details);
     </pre>
   </div>
 </div>
@@ -64,7 +64,7 @@ let networks = ['mastercard', 'visa'];
 <script>
         var Demo = {
            log : function() {
-             var line<img src="fcode-biometric-payment-card-slider.jpg" alt="" /> = Array.prototype.slice.call(arguments).map(function(argument) {
+             var line = Array.prototype.slice.call(arguments).map(function(argument) {
                return typeof argument === 'string' ? argument : JSON.stringify(argument);
              }).join(' ');
 
