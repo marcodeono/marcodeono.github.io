@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+.header {
+	background-color: rgb(67, 0, 153);
+	border-image-slice: stretch stretch;
+	color: white;
+	
+	padding-bottom: 30px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+
+}
+body {
+	margin: 0;
+}
+
+.headerText {
+	width: 100%;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: gordita-regular-webfont, Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+}
+
+.padder {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NTkiIGhlaWdodD0iOTQ1IiB2aWV3Qm94PSIwIDAgNTU5IDk0NSI+PGcgb3BhY2l0eT0iLjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQzMDA5OSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCI+PHBhdGggZD0iTTI3OS41IDM1NS4yYy0xOS4zIDAtMzQuOS0xNS4xLTM0LjktMzMuN3MxNS42LTMzLjcgMzQuOS0zMy43YzE5LjMgMCAzNC45IDE1LjEgMzQuOSAzMy43bS0zNC45IDY3LjRjLTM4LjYgMC02OS45LTMwLjItNjkuOS02Ny40czMxLjMtNjcuNCA2OS45LTY3LjRjMzguNiAwIDY5LjkgMzAuMiA2OS45IDY3LjRtLTY5LjkgMTAxLjFjLTU3LjkgMC0xMDQuOC00NS4zLTEwNC44LTEwMS4xczQ2LjktMTAxLjEgMTA0LjgtMTAxLjEgMTA0LjggNDUuMyAxMDQuOCAxMDEuMU0yNzkuNSA0NTYuM2MtNzcuMiAwLTEzOS44LTYwLjMtMTM5LjgtMTM0LjggMC03NC40IDYyLjYtMTM0LjggMTM5LjgtMTM0LjggNzcuMiAwIDEzOS44IDYwLjMgMTM5LjggMTM0LjhNMjc5LjUgNDkwYy05Ni41IDAtMTc0LjctNzUuNC0xNzQuNy0xNjguNSAwLTkzIDc4LjItMTY4LjUgMTc0LjctMTY4LjVzMTc0LjcgNzUuNCAxNzQuNyAxNjguNSIvPjxwYXRoIGQ9Ik00ODkuMiAzMjEuNWMwLTEwNi04NC42LTE5Mi44LTE5Mi4yLTIwMS4zVjEuNG0tMzQuOSAwdjExOC44Yy0xMDcuNiA4LjYtMTkyLjIgOTUuNC0xOTIuMiAyMDEuMyAwIDExMS43IDkzLjkgMjAyLjIgMjA5LjcgMjAyLjJtMjc5LjUtMjAyLjJjMC0xMTkuNC04MC42LTIyMC42LTE5Mi4yLTI1NlYxLjRtLTE3NC43IDB2NjQuMkM4MC42IDEwMC45IDAgMjAyLjEgMCAzMjEuNWMwIDE0OC45IDEyNS4yIDI2OS42IDI3OS42IDI2OS42bTI0NC41LTI2OS42YzAtMTEyLjktODIuMy0yMDcuMi0xOTIuMi0yMzAuM1YxLjRtLTEwNC44IDB2ODkuOEMxMTcuMiAxMTQuMyAzNC45IDIwOC42IDM0LjkgMzIxLjVjMCAxMzAuMyAxMDkuNSAyMzUuOSAyNDQuNiAyMzUuOSIvPjxwYXRoIGQ9Ik0yNzkuNSA1OTEuMWMxOS4zIDAgMzQuOSAxNS4xIDM0LjkgMzMuN3MtMTUuNiAzMy43LTM0LjkgMzMuN2MtMTkuMyAwLTM0LjktMTUuMS0zNC45LTMzLjdtMzQuOS02Ny40YzM4LjYgMCA2OS45IDMwLjIgNjkuOSA2Ny40cy0zMS4zIDY3LjQtNjkuOSA2Ny40Yy0zOC42IDAtNjkuOS0zMC4yLTY5LjktNjcuNG02OS45LTEwMWM1Ny45IDAgMTA0LjggNDUuMyAxMDQuOCAxMDEuMVMzMzcuNCA3MjYgMjc5LjUgNzI2cy0xMDQuOC00NS4zLTEwNC44LTEwMS4xbTEwNC44LTEzNC44Yzc3LjIgMCAxMzkuOCA2MC4zIDEzOS44IDEzNC44IDAgNzQuNC02Mi42IDEzNC44LTEzOS44IDEzNC44LTc3LjIgMC0xMzkuOC02MC4zLTEzOS44LTEzNC44bTEzOS44LTE2OC41Yzk2LjUgMCAxNzQuNyA3NS40IDE3NC43IDE2OC41IDAgOTMtNzguMiAxNjguNS0xNzQuNyAxNjguNS05Ni41IDAtMTc0LjctNzUuNC0xNzQuNy0xNjguNSIvPjxwYXRoIGQ9Ik02OS45IDYyNC45YzAgMTA2IDg0LjYgMTkyLjggMTkyLjIgMjAxLjNWOTQ1bTM0LjkgMFY4MjYuMmMxMDcuNi04LjYgMTkyLjItOTUuNCAxOTIuMi0yMDEuMyAwLTExMS43LTkzLjktMjAyLjItMjA5LjctMjAyLjJNMCA2MjQuOWMwIDExOS40IDgwLjYgMjIwLjYgMTkyLjIgMjU2Vjk0NW0xNzQuNyAwdi02NC4yYzExMS42LTM1LjQgMTkyLjItMTM2LjUgMTkyLjItMjU2IDAtMTQ4LjktMTI1LjItMjY5LjYtMjc5LjYtMjY5LjZNMzQuOSA2MjQuOWMwIDExMi45IDgyLjMgMjA3LjIgMTkyLjIgMjMwLjNWOTQ1bTEwNC44IDB2LTg5LjhDNDQxLjggODMyIDUyNC4xIDczNy44IDUyNC4xIDYyNC45YzAtMTMwLjMtMTA5LjUtMjM1LjktMjQ0LjYtMjM1LjkiLz48L2c+PC9zdmc+);
+  background-repeat: no-repeat;  
+  padding-bottom: 80px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+}
+
+.pageContent {
+	font-family: gordita-regular-webfont, Arial, sans-serif;
+}
+
+.status {
+  border:1px solid #f1a899;
+  background:#fddfdf;
+  color:#5f3f3f;
+}
+
+.log {
+	border:1px solid #dddddd;background:#e9e9e9;color:#333333;font-weight:bold;
+}
