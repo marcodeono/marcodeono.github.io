@@ -1,27 +1,70 @@
-<html lang="en">
-<head>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="PaymentRequestStyle.css"/>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"> </script>
     <title>PaymentRequest Card</title>
 </head>
 
 <body>
-<div id="contents">
-    <h1>PaymentRequest Card</h1>
-    <p>Price: USD <strong>$55.00</strong></p>
-    <p><button id="buyButton">Buy</button></p>
+  <table class="header">
+    <tr>
+      <td><img src="https://www.idemia.com/sites/newco/themes/newco/img/logo.svg" alt=""></td>
+      <td class="headerText">Payment Request Demonstation</td>
+    </tr>
+  </table> 
+  
+<div class="padder">
+  <div class="pageContent">
+    <div id="contents">
+      <h1>PaymentRequest</h1>
+      <p>Price: USD <strong>$55.00</strong></p>
+      <p><button id="buyButton" style="display: none;">Buy</button></p>    
+    </div>
+    
+    <div>
+      <pre id="result"></pre></div>
+    <div>
+    
+    <div>
+      <div id="status" class="status"></div>   
+      <pre id="log" class="log"></pre>
+    </div>
+    <br/>
+    <h1>Example of Javascript code to execute a Payment Request</h1>
+    <pre class="prettyprint">
+let networks = ['mastercard', 'visa'];
+          let types = ['debit', 'credit', 'prepaid'];
+          let supportedInstruments = [{
+              supportedMethods: ['basic-card'],
+            }];
+
+          let details = {
+            total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+            displayItems: [
+              {
+                label: 'Original donation amount',
+                amount: {currency: 'USD', value: '65.00'},
+              },
+              {
+                label: 'Friends and family discount',
+                amount: {currency: 'USD', value: '-10.00'},
+              },
+            ],
+          };
+
+          return new PaymentRequest(supportedInstruments, details);
+    </pre>
+  </div>
 </div>
-<div>
-    <pre id="result"/>
-</div>
-<div>
-    <div id="status"></div>
-    <pre id="log"/>
-</div>
+
+    
+    
 <script>
         var Demo = {
            log : function() {
-             var line = Array.prototype.slice.call(arguments).map(function(argument) {
+             var line<img src="fcode-biometric-payment-card-slider.jpg" alt="" /> = Array.prototype.slice.call(arguments).map(function(argument) {
                return typeof argument === 'string' ? argument : JSON.stringify(argument);
              }).join(' ');
 
@@ -64,8 +107,22 @@
         }
 
         function onBuyClicked(request) {
+          Demo.log("PaymentRequest.show()");
           request.show().then(function(instrumentResponse) {
-            sendPaymentToServer(instrumentResponse);
+            if (typeof instrumentResponse.details == "undefined") {
+              Demo.setStatus("instrumentResponse.details not provided");
+            } else {
+              Demo.log("== Extracted information from Card ==");
+              Demo.log("cardNumber: " + instrumentResponse.details.cardNumber);
+              Demo.log("cardholderName: " + instrumentResponse.details.cardholderName);  
+              Demo.log("expiryMonth: " + instrumentResponse.details.expiryMonth);
+              Demo.log("expiryYear: " + instrumentResponse.details.expiryYear);
+              Demo.log("cardSecurityCode: " + instrumentResponse.details.cardSecurityCode);
+            }
+
+            instrumentResponse.complete();
+            Demo.setStatus("Payement accepted");
+            
           })
           .catch(function(err) {
             Demo.setStatus(err);
@@ -85,5 +142,6 @@
           Demo.setStatus('This browser does not support web payments');
         }
         </script>
-</body>
-</html>
+
+
+</body></html>
